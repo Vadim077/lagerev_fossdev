@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="ndfl-calculator-pypi-firstl",
+    name="ndfl-calculator-pypi-firstlav",
     version="0.1.0",
     long_description="Repository: https://github.com/Vadim077/lagerev_fossdev",
     package_dir={"": "src"},
