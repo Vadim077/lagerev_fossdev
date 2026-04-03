@@ -1,4 +1,5 @@
-from script import sum, devide, mul
+from script import devide, sum
+
 
 def test_sum():
     a = 1
@@ -6,33 +7,35 @@ def test_sum():
     result = 3
     assert sum(a, b) == result
 
+
 def test_devide():
-    a = 4
-    b = 2
+    a = 2
+    b = 4
     result = 0.5
     assert devide(a, b) == result
 
-def test_devison_problem():
+
+def test_devide_zero():
+    a = 2
+    b = 0
     try:
-        devide("A", "B")
+        devide(a, b)
         assert False
     except ValueError as e:
-        print("Error!")
+        print("Test (zero-devision) passed")
 
-def test_mul():
-    a = 4
-    b = 9
-    result = 36
-    assert mul(a, b) == result
 
-def test_division_problem():
-    try:
-        devide([1,2,3], [1,2,3])
-        return False
-    except:
-        print("All good!")
+def test_devision_prohibited():
+  try:
+    devide("A", "B")
+    print("Test string-devision fails")
+    assert False
+  except ValueError as e:
+    print("Test string-devision passed")
+
 
 if __name__ == "__main__":
-    test_devide() 
     test_sum()
-    test_mul()
+    test_devide()
+    test_devide_zero()
+    test_devision_prohibited()
